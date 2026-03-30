@@ -33,3 +33,11 @@ Comme nous souhaitons nommer notre pi: "pveTESTpi.corsica", Il va falloir adapte
 ```Bash
 sudo hostnamectl set-hostname [HOSTNAME]
 ```
+
+Pour vérifier si la configuratrion a fonctionné vous pouvez executer la commande:
+
+```Bash
+hostname
+```
+
+Cette commande devrait renvoyer le nom d'hôte de vous avez mis, cependant Proxmox est extrêmement sensible à la résolution de nom. Le nom d'hôte doit être lié à ton adresse IP statique dans le fichier `/etc/hosts`.
