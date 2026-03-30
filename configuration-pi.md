@@ -139,4 +139,10 @@ Avant de lancer l'installation de Proxmox 9.1, assurez-vous que votre système e
 sudo apt update && sudo apt full-upgrade -y
 ```
 
+installation de package nécessaires:
+
+```Bash
+apt install bridge-utils ifupdown2 -y
+```
+
 Et voilà, votre pi devrait être prêt pour la suite. 🎊
