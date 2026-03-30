@@ -105,3 +105,19 @@ iface vmbr0 inet static
         bridge-stp off
         bridge-fd 0
 ```
+
+>[!IMPORTANT]
+>Si vous utilisez NetworkManager (par défaut sur certaines images Pi), il est fortement recommandé de le désactiver pour laisser Proxmox gérer le réseau via les fichiers de configuration standards :
+>```Bash
+>sudo systemctl disable --now NetworkManager
+>```
+
+## 3. Mise à jour et Préparation des dépôts
+
+Avant de lancer l'installation de Proxmox 9.1, assurez-vous que votre système est parfaitement à jour sur cette branche 13.2 :
+
+```Bash
+sudo apt update && sudo apt full-upgrade -y
+```
+
+Et voilà, votre pi devrait être prêt pour la suite. 🎊
