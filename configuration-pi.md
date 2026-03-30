@@ -25,3 +25,11 @@ Passerelle : 192.168.92.254
 > ```Bash
 > cat /etc/debian_version
 > ```
+
+## 1. Configuration d'un nom d'hôte
+
+Comme nous souhaitons nommer notre pi: "pveTESTpi.corsica", Il va falloir adapter la commande suivante:
+
+```Bash
+sudo hostnamectl set-hostname [HOSTNAME]
+```
