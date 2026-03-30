@@ -58,3 +58,17 @@ Le fichier devrait contenir ceci:
 ff02::1   ip6-allnodes
 ff02::2   ip6-allrouters
 ```
+
+Il faut rajouter la ligne suivantes:
+
+```conf
+127.0.0.1       localhost
+192.168.92.23   pveTESTSpi.cub.corsica pveTESTSpi
+```
+
+Maintenant vous pouvez confirmer et fermer.
+
+>[!TIP]
+>`esc` puis `:wq` avec vi,vim,nvim.
+>
+>`ctrl + X ` puis `backspace` avec nano.
