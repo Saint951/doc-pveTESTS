@@ -114,6 +114,25 @@ iface vmbr0 inet static
 
 ## 3. Mise à jour et Préparation des dépôts
 
+Tout d'abord nous allons rendre possible l'accès à internet:
+
+```Bash
+# 1. On active l'interface physique
+sudo ip link set eth0 up
+
+# 2. On lui donne ton IP statique
+sudo ip addr add 192.168.92.23/24 dev eth0
+
+# 3. On définit la passerelle pour sortir sur le web
+sudo ip route add default via 192.168.92.254
+```
+
+Maintenant nous testons la connexion:
+
+```Bash
+ping -c 3 google.com
+```
+
 Avant de lancer l'installation de Proxmox 9.1, assurez-vous que votre système est parfaitement à jour sur cette branche 13.2 :
 
 ```Bash
