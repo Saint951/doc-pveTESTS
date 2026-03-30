@@ -16,3 +16,12 @@ IP : 192.168.92.23/24 sur vmbr0
 
 Passerelle : 192.168.92.254 
 ```
+
+# Préparation du raspberry pi 5
+
+>[!IMPORTANT]
+>Cette documentation n'est pas garantie de fonctionner sur debian <13.2;
+>Pour consulter la version:
+> ```Bash
+> cat /etc/debian_version
+> ```
