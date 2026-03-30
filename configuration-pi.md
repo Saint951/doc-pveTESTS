@@ -40,4 +40,21 @@ Pour vérifier si la configuratrion a fonctionné vous pouvez executer la comman
 hostname
 ```
 
-Cette commande devrait renvoyer le nom d'hôte de vous avez mis, cependant Proxmox est extrêmement sensible à la résolution de nom. Le nom d'hôte doit être lié à ton adresse IP statique dans le fichier `/etc/hosts`.
+Cette commande devrait renvoyer le nom d'hôte de vous avez mis, cependant Proxmox est extrêmement sensible à la résolution de nom. Le nom d'hôte doit être lié à votre adresse IP statique dans le fichier `/etc/hosts`.
+
+À l'aide de votre éditeur de text préferer (`nano` ou `vi` etc..)
+
+```Bash
+vi /etc/hosts`
+```
+
+Le fichier devrait contenir ceci:
+
+```conf
+127.0.0.1       localhost
+255.255.255.255 broadcastost
+::1             localhost
+
+ff02::1   ip6-allnodes
+ff02::2   ip6-allrouters
+```
