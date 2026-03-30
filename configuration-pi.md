@@ -5,6 +5,9 @@ Pour optimiser les coûts et l'espace au sein du local technique de CUB, le choi
 Ce rapport présente la configuration du nœud pveTESTSpi et son intégration dans le cluster « pveTESTS ».
 L'enjeu est de valider la viabilité de cette architecture hybride ARM/x86 pour tester les nouveaux workflows de déploiement automatisé via Cloud-Init et la gestion des droits utilisateurs.
 
+>[!TIP]
+>Certaines commandes dans cette documentation nécessitent d'être l'utilisateur root ou de sudo en tant que sudoer.
+
 # Cahier des charges
 
  ```
@@ -63,7 +66,7 @@ Il faut rajouter la ligne suivantes:
 
 ```conf
 127.0.0.1       localhost
-192.168.92.23   pveTESTSpi.cub.corsica pveTESTSpi
+[IP_du_PI]      [nom_hôte et/ou nom_complet]
 ```
 
 Maintenant vous pouvez confirmer et fermer.
@@ -71,4 +74,34 @@ Maintenant vous pouvez confirmer et fermer.
 >[!TIP]
 >`esc` puis `:wq` avec vi,vim,nvim.
 >
->`ctrl + X ` puis `backspace` avec nano.
+>`ctrl + X `ensuite `Y` puis `backspace` avec nano.
+
+
+## 2. Configuration réseau (Le Bridge vmbr0)
+
+Comme spécifié dans le cahier des charges, Proxmox utilise un pont (bridge) pour permettre aux VM et conteneurs LXC de sortir sur le réseau physique de CUB.
+
+Sur Debian 13, on utilise généralement ifupdown2. Éditez votre fichier d'interfaces :
+
+```bash
+vi /etc/network/interfaces
+```
+
+Il faut y mettre:
+
+```conf
+auto lo
+iface lo inet loopback
+
+# Interface physique du Raspberry Pi 5
+iface eth0 inet manual
+
+# Pont Proxmox pour le cluster [nom_cluster]
+auto vmbr0
+iface vmbr0 inet static
+        address [ip_pi]/[masque]
+        gateway [ip_passerelle]
+        bridge-ports [interface_physique]
+        bridge-stp off
+        bridge-fd 0
+```
