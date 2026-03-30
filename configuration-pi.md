@@ -1,8 +1,9 @@
 # Documentation de l'installation de proxmox sur raspberry pi 5.
 
-Ce document détaille la mise en place d'un nœud de virtualisation expérimental basé sur l'architecture ARM.
-L'objectif est d'évaluer les capacités du Raspberry Pi 5 en tant qu'hyperviseur via le portage de Proxmox VE.
-Ce serveur, identifié sous le nom de pveTESTSpi, servira d'environnement de test pour le déploiement de micro-services et de conteneurs LXC au sein de l'infrastructure cub.corsica.
+La gestion d'un cluster Proxmox nécessite un minimum de trois nœuds pour assurer la haute disponibilité et la cohérence des votes (quorum).
+Pour optimiser les coûts et l'espace au sein du local technique de CUB, le choix a été fait d'intégrer des Raspberry Pi 5 comme nœuds légers au sein des clusters.
+Ce rapport présente la configuration du nœud pveTESTSpi et son intégration dans le cluster « pveTESTS ».
+L'enjeu est de valider la viabilité de cette architecture hybride ARM/x86 pour tester les nouveaux workflows de déploiement automatisé via Cloud-Init et la gestion des droits utilisateurs.
 
 # Cahier des charges
 
