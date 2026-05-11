@@ -330,3 +330,6 @@ Cliquez sur l'onglet Network pour afficher l'adresse IP du conteneur.
 Ce sera utile pour récupérer l'adresse IP dans le cas où la carte réseau est configurée en DHCP. 
 De plus, sur ce type de conteneurs applicatifs, vous n'avez pas toujours un shell interactif complet, donc l'onglet Console ne sera pas d'une grande utilité (cela varie d'une image à l'autre).  
 Ouvrez un navigateur et spécifiez l'adresse IP du conteneur suivie du port 3001 (ou 3002 si la variable avec le port personnalisé a été appliquée). 
+
+
+ATTENTION: Fonctionnalité encore en développement, les fonctions réseaux et internes ne fonctionnent pas
