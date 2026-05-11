@@ -189,9 +189,9 @@ La première étape va être de créer un compte.
 Depuis la navigation dans la console, aller sur Datacenter > Permissions > Users. 
 On arrive sur la liste des utilisateurs.  
 
-> Cliquer sur le bouton Add.
-> Commencer par rentrer l'identifiant de l'utilisateur, choisir le Realm Proxmox VE authentification Server.  
-> Puis saisir le mot de passe de l'utilisateur et cliquer sur Add.  
+ Cliquer sur le bouton Add.
+ Commencer par rentrer l'identifiant de l'utilisateur, choisir le Realm Proxmox VE authentification Server.  
+Puis saisir le mot de passe de l'utilisateur et cliquer sur Add.  
 > Note : On va choisir l'authentification Proxmox VE authentification Server et non PAM. 
 > Pour utiliser le Realm PAM, l'utilisateur doit être créé au niveau du système, ce qui n'est pas nécessaire car on souhaite seulement un accès à l'interface Web de Proxmox.
 
