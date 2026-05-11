@@ -333,3 +333,13 @@ Ouvrez un navigateur et spécifiez l'adresse IP du conteneur suivie du port 3001
 
 
 ATTENTION: Fonctionnalité encore en développement, les fonctions réseaux et internes ne fonctionnent pas
+
+### Déplacement de fichiers de conf des LXC si coincé sur un mauvais noeud
+
+Dans le cas d'un problème de HA et que un ou plusieurs conteneur(s) LXC reste "coincé" il faut faire :
+
+Déplacer le fichier de conf du mauvais noeud au bon noeud :
+
+```bash
+mv /etc/pve/nodes/pveTESTS2/lxc/100.conf /etc/pve/nodes/pveTESTS1/lxc/
+```
