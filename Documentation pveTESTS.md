@@ -224,6 +224,7 @@ On peut néanmoins créer des rôles en appuyant sur "Create" en haut à gauche 
 
  
 > Stockage (Datastore)
+
  Datastore.Allocate : Créer/supprimer des volumes de stockage, allouer de l'espace.  
  Datastore.AllocateSpace : Créer des disques virtuels sur le stockage.  
  Datastore.AllocateTemplate : Autoriser l'upload de templates ou d'ISOs.  
