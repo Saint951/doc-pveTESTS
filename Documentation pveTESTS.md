@@ -206,56 +206,56 @@ On peut néanmoins créer des rôles en appuyant sur "Create" en haut à gauche 
 >
 
 > **VM / Conteneurs (Guest)**
-> 
-> VM.Allocate : Créer ou supprimer des VM sur un storage.  
-> VM.Config.Options : Modifier tout sauf le CPU, la RAM et le réseau (ex: boot order).  
-> VM.Config.CPU / RAM / Network / Disk : Modifier spécifiquement ces ressources.  
-> VM.Config.HWType : Changer le type de matériel émulé.  
-> VM.Config.CDROM : Éjecter ou insérer un ISO.  
-> VM.Config.Cloudinit : Configurer les paramètres Cloud-init.  
-> VM.Console : Accéder à la console interactive de la VM.  
-> VM.PowerMgmt : Démarrer, arrêter, reset ou suspendre.  
-> VM.Migrate : Déplacer la VM vers un autre nœud du cluster.  
-> VM.Backup : Créer des sauvegardes (Backups).  
-> VM.Snapshot : Créer et supprimer des snapshots.  
-> VM.Snapshot.Rollback : Revenir à un état précédent via snapshot.  
-> VM.Clone : Cloner une VM ou un template.  
-> VM.Audit : Voir la configuration de la VM sans pouvoir la modifier.  
->
-> 
+
+ VM.Allocate : Créer ou supprimer des VM sur un storage.  
+ VM.Config.Options : Modifier tout sauf le CPU, la RAM et le réseau (ex: boot order).  
+ VM.Config.CPU / RAM / Network / Disk : Modifier spécifiquement ces ressources.  
+ VM.Config.HWType : Changer le type de matériel émulé.  
+ VM.Config.CDROM : Éjecter ou insérer un ISO.  
+ VM.Config.Cloudinit : Configurer les paramètres Cloud-init.  
+ VM.Console : Accéder à la console interactive de la VM.  
+ VM.PowerMgmt : Démarrer, arrêter, reset ou suspendre.  
+ VM.Migrate : Déplacer la VM vers un autre nœud du cluster.  
+ VM.Backup : Créer des sauvegardes (Backups).  
+ VM.Snapshot : Créer et supprimer des snapshots.  
+ VM.Snapshot.Rollback : Revenir à un état précédent via snapshot.  
+ VM.Clone : Cloner une VM ou un template.  
+ VM.Audit : Voir la configuration de la VM sans pouvoir la modifier.  
+
+ 
 > Stockage (Datastore)
-> Datastore.Allocate : Créer/supprimer des volumes de stockage, allouer de l'espace.  
-> Datastore.AllocateSpace : Créer des disques virtuels sur le stockage.  
-> Datastore.AllocateTemplate : Autoriser l'upload de templates ou d'ISOs.  
-> Datastore.Audit : Voir l'état du stockage et le contenu.  
->
-> 
+ Datastore.Allocate : Créer/supprimer des volumes de stockage, allouer de l'espace.  
+ Datastore.AllocateSpace : Créer des disques virtuels sur le stockage.  
+ Datastore.AllocateTemplate : Autoriser l'upload de templates ou d'ISOs.  
+ Datastore.Audit : Voir l'état du stockage et le contenu.  
+
+ 
 > Réseau & SDN
-> 
-> SDN.Allocate : Créer ou configurer des réseaux définis par logiciel.  
-> SDN.Audit : Voir la configuration SDN.  
-> SDN.Use : Utiliser un bridge ou un VNet sur une interface réseau de VM.  
-> 
-> 
+ 
+ SDN.Allocate : Créer ou configurer des réseaux définis par logiciel.  
+ SDN.Audit : Voir la configuration SDN.  
+ SDN.Use : Utiliser un bridge ou un VNet sur une interface réseau de VM.  
+ 
+ 
 > Système & Nœud (Sys)
-> 
-> Sys.Console : Accès au shell (ligne de commande) du serveur hôte.  
-> Sys.Audit : Voir les logs système et l'état du matériel (CPU, température, etc.).  
-> Sys.Syslog : Consulter les journaux système (syslog).  
-> Sys.PowerMgmt : Éteindre ou redémarrer le serveur physique (le nœud).  
-> Sys.Modify : Modifier les paramètres réseau du nœud ou le temps système.  
-> 
-> 
+ 
+ Sys.Console : Accès au shell (ligne de commande) du serveur hôte.  
+ Sys.Audit : Voir les logs système et l'état du matériel (CPU, température, etc.).  
+ Sys.Syslog : Consulter les journaux système (syslog).  
+ Sys.PowerMgmt : Éteindre ou redémarrer le serveur physique (le nœud).  
+ Sys.Modify : Modifier les paramètres réseau du nœud ou le temps système.  
+ 
+ 
 > Accès & Utilisateurs (Permissions)
-> 
-> Permissions.Modify : Modifier les droits d'accès des autres (attention, droit très critique).  
-> User.Modify : Créer, supprimer ou modifier des utilisateurs.  
-> Group.Allocate : Créer ou supprimer des groupes d'utilisateurs.  
-> Realm.Allocate : Gérer les méthodes d'authentification (AD, LDAP, PAM).  
-> Realm.AllocateUser : Assigner des utilisateurs à un domaine spécifique.  
-> DiversPool.Allocate : Créer ou gérer des pools de ressources.  
-> Mapping.Modify / Use / Audit : Gérer les correspondances de matériel (USB/PCI passthrough).  
-> VM.GuestAgent.FileRead / Write / Exec : Interagir avec les fichiers à l'intérieur de la VM via l'agent QEMU.  
+ 
+ Permissions.Modify : Modifier les droits d'accès des autres (attention, droit très critique).  
+ User.Modify : Créer, supprimer ou modifier des utilisateurs.  
+ Group.Allocate : Créer ou supprimer des groupes d'utilisateurs.  
+ Realm.Allocate : Gérer les méthodes d'authentification (AD, LDAP, PAM).  
+ Realm.AllocateUser : Assigner des utilisateurs à un domaine spécifique.  
+ DiversPool.Allocate : Créer ou gérer des pools de ressources.  
+ Mapping.Modify / Use / Audit : Gérer les correspondances de matériel (USB/PCI passthrough).  
+ VM.GuestAgent.FileRead / Write / Exec : Interagir avec les fichiers à l'intérieur de la VM via l'agent QEMU.  
  
 ### Permissions sur une VM
 
