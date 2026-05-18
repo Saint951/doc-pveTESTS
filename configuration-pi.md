@@ -145,7 +145,7 @@ installation de package nécessaires:
 apt install bridge-utils ifupdown2 -y
 ```
 >[!IMPORTANT]
->Pour que le pi est accès au cluster, on a mis en place un script au démarrage qui reconfigure son ip.
+>Pour que le pi ait accès au cluster, on a mis en place un script au démarrage qui reconfigure son ip.
 >```bash
 >#on crée le script dans ce fichier
 >sudo nano /usr/local/bin/config-reseau.sh
@@ -191,9 +191,5 @@ apt install bridge-utils ifupdown2 -y
 >
 >sudo systemctl enable config-reseau.service
 > ```
-
-
->[!TIP]
->Cela était necessaire puisqu'il faut désactiver network manager car sinon il prenait la main sur la carte réseau du pi.
 
 Et voilà, votre pi devrait être prêt pour la suite. 🎊
