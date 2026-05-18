@@ -155,6 +155,9 @@ apt install bridge-utils ifupdown2 -y
 ># on active l'interface physique
 >ip link set ethO up
 >
+># On attend 2 secondes que l'interface soit bien initialisée par le noyau
+>sleep 2
+>
 ># on lui attribut l'ip statique (on enlève aussi les anciennes conf)
 >ip addr flush dev eth0
 >ip addr add 192.168.92.23/24 dev eth0
