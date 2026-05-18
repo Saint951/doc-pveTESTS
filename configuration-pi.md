@@ -144,5 +144,56 @@ installation de package nécessaires:
 ```Bash
 apt install bridge-utils ifupdown2 -y
 ```
+>[!IMPORANT]
+>Pour que le pi est accès au cluster, on a mis en place un script au démarrage qui reconfigure son ip.
+>```bash
+>#on crée le script dans ce fichier
+>sudo nano /usr/local/bin/config-reseau.sh
+>```
+>```bash
+>#!/bin/bash
+># on active l'interface physique
+>ip link set ethO up
+>
+># on lui attribut l'ip statique (on enlève aussi les anciennes conf)
+>ip addr flush dev eth0
+>ip addr add 192.168.92.23/24 dev eth0
+>
+># on met la passerelle par défaut
+>ip route add default via 192.168.92.254
+>```
+>on rend alors le script exécutable:
+>```bash
+>sudo chmod +x /usr/local/bin/config-reseau.sh
+>```
+>
+>on crée un fichier service:
+>```bash
+>sudo nano /etc/systemd/system/config-reseau.service
+>```
+>et on ajoute cette configuration:
+>```bash
+>[Unit]
+>DescriptionConfiguration Réseau Statique Persistante
+>After=network.target
+>
+>[Service]
+>Type=oneshot
+>ExecStart=/usr/local/bin/config-reseau.sh
+>emainAfterExit=yes
+>
+>[Install]
+>WantedBy=multi-user.target
+>```
+>Enfin on active le service au démarrage:
+>```bash
+>sudo systemctl daemon-reload
+>
+>sudo systemctl enable config-reseau.service
+> ```
+
+
+>[!TIP]
+>Cela était necessaire puisqu'il faut désactiver network manager car sinon il prenait la main sur la carte réseau du pi.
 
 Et voilà, votre pi devrait être prêt pour la suite. 🎊
