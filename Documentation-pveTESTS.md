@@ -38,8 +38,10 @@ Cette section détaille la configuration des switchs pour propager ce flux jusqu
 
 la liaison entre le cœur de réseau et le switch de distribution est déjà opérationnelle:
 
-> SW-CORE: Le VLAN 92 est propagé via le lien 802.1q sur le port 44 (configuré en ALL Tagged).
-> SW-CUB: Reçoit le flux sur le port 47.
+```
+SW-CORE: Le VLAN 92 est propagé via le lien 802.1q sur le port 44 (configuré en ALL Tagged).
+SW-CUB: Reçoit le flux sur le port 47.
+```
 
 2. Configuration de SW-CUB (Salle 203)
 
@@ -47,8 +49,8 @@ Sur le switch SW-CUB, le VLAN 92 a été crée et assigné aux ports de desserte
 
 Actions effectuées:
 
-> Création du VLAN : ID 92 | Nom management-proxmox
-> Configuration des ports d'accès: Les ports ont été configurés en mode UNTAGGED (Access) pour permettre aux serveurs de communiquer sans configuration de VLAN interne au niveau de l'OS.
+* **Création du VLAN** : ID 92 | Nom management-proxmox
+* **Configuration des ports d'accès** : Les ports ont été configurés en mode UNTAGGED (Access) pour permettre aux serveurs de communiquer sans configuration de VLAN interne au niveau de l'OS.
 
 
 ## Configuration des serveurs:
