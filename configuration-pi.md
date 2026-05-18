@@ -144,7 +144,7 @@ installation de package nécessaires:
 ```Bash
 apt install bridge-utils ifupdown2 -y
 ```
->[!IMPORANT]
+>[!IMPORTANT]
 >Pour que le pi est accès au cluster, on a mis en place un script au démarrage qui reconfigure son ip.
 >```bash
 >#on crée le script dans ce fichier
