@@ -34,7 +34,7 @@ Passerelle : 192.168.92.254
 Comme nous souhaitons nommer notre pi: "pveTESTpi.corsica", Il va falloir adapter la commande suivante:
 
 ```Bash
-sudo hostnamectl set-hostname [HOSTNAME]
+hostnamectl set-hostname [HOSTNAME]
 ```
 
 Pour vérifier si la configuratrion a fonctionné vous pouvez executer la commande:
@@ -109,7 +109,7 @@ iface vmbr0 inet static
 >[!IMPORTANT]
 >Si vous utilisez NetworkManager (par défaut sur certaines images Pi), il est fortement recommandé de le désactiver pour laisser Proxmox gérer le réseau via les fichiers de configuration standards :
 >```Bash
->sudo systemctl disable --now NetworkManager
+>systemctl disable --now NetworkManager
 >```
 
 ## 3. Mise à jour et Préparation des dépôts
@@ -118,13 +118,13 @@ Tout d'abord nous allons rendre possible l'accès à internet:
 
 ```Bash
 # 1. On active l'interface physique
-sudo ip link set eth0 up
+ip link set eth0 up
 
 # 2. On lui donne ton IP statique
-sudo ip addr add 192.168.92.23/24 dev eth0
+ip addr add 192.168.92.23/24 dev eth0
 
 # 3. On définit la passerelle pour sortir sur le web
-sudo ip route add default via 192.168.92.254
+ip route add default via 192.168.92.254
 ```
 
 Maintenant nous testons la connexion:
@@ -136,7 +136,7 @@ ping -c 3 google.com
 Avant de lancer l'installation de Proxmox 9.1, assurez-vous que votre système est parfaitement à jour sur cette branche 13.2 :
 
 ```Bash
-sudo apt update && sudo apt full-upgrade -y
+apt update && sudo apt full-upgrade -y
 ```
 
 installation de package nécessaires:
@@ -148,7 +148,7 @@ apt install bridge-utils ifupdown2 -y
 >Pour que le pi ait accès au cluster, on a mis en place un script au démarrage qui reconfigure son ip.
 >```bash
 >#on crée le script dans ce fichier
->sudo nano /usr/local/bin/config-reseau.sh
+>nano /usr/local/bin/config-reseau.sh
 >```
 >```bash
 >#!/bin/bash
@@ -164,12 +164,12 @@ apt install bridge-utils ifupdown2 -y
 >```
 >on rend alors le script exécutable:
 >```bash
->sudo chmod +x /usr/local/bin/config-reseau.sh
+>chmod +x /usr/local/bin/config-reseau.sh
 >```
 >
 >on crée un fichier service:
 >```bash
->sudo nano /etc/systemd/system/config-reseau.service
+>nano /etc/systemd/system/config-reseau.service
 >```
 >et on ajoute cette configuration:
 >```bash
@@ -187,9 +187,9 @@ apt install bridge-utils ifupdown2 -y
 >```
 >Enfin on active le service au démarrage:
 >```bash
->sudo systemctl daemon-reload
+>systemctl daemon-reload
 >
->sudo systemctl enable config-reseau.service
+>systemctl enable config-reseau.service
 > ```
 
 Et voilà, votre pi devrait être prêt pour la suite. 🎊
