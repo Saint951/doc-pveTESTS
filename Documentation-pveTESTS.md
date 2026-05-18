@@ -66,7 +66,6 @@ Configuration de "Systeme" de 146Go en RAID0 et de "zpool" de 900Go en RAID0 dep
 
 ```text
 login: root
-mdp: Cluster@!Test2B
 email: admin@cub.corsica
 FQDN: pveTESTS1.cub.corsica
 
@@ -84,7 +83,6 @@ Liaison: port 26 de SW-CORE (VLAN 50 et 60)
 
 ```text
 login: root
-mdp: Cluster@!Test2B
 email: admin@cub.corsica
 FQDN: pveTESTS2.cub.corsica
 
@@ -102,7 +100,6 @@ Liaison: port 27 de SW-CORE (VLAN 50, 60 et 70)
 
 ```text
 login: root
-mdp: Cluster@!Test2B
 email: admin@cub.corsica
 FQDN: pveTESTSpi.cub.corsica
 IP: 192.168.92.23/24
